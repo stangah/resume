@@ -1,0 +1,126 @@
+{
+  "basics": {
+    "name": "Patrick Stanger",
+    "label": "Software Engineer",
+    "email": "pstanger@gmail.com",
+    "phone": "(609) 571-6585",
+    "location": {
+      "address": "5044 Diamond Heights Blvd",
+      "postalCode": "CA 94131",
+      "city": "San Francisco",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [{
+      "network": "Github",
+      "username": "stangah",
+      "url": "https://github.com/stangah"
+    },{
+      "network": "Linkedin",
+      "url": "https://www.linkedin.com/in/pstanger"
+    }]
+  },
+  "work": [
+    {
+      "company": "Willow",
+      "position": "Contract Software Engineer",
+      "website": "https://willowpump.com",
+      "startDate": "2015-04-01",
+      "highlights": [
+        "Developed multi-platform desktop R&D tool to facilitate device connectivity and data capture, storage, and visualization of clinical trial data",
+        "Devised machine learning algorithm and training tools for translating onboard sensor data into information which is core to device functionality",
+        "Created a suite of calibration and testing software used during the manufacturing line assembly and verification of every device sold"
+      ]
+    },
+    {
+      "company": "Truss",
+      "position": "Software Engineer",
+      "website": "https://truss.works",
+      "startDate": "2015-07-01",
+      "endDate": "2019-04-05",
+      "highlights": [
+        "Designed and implemented full-stack integration CI tests using Cypress, including Golang-based test data generation framework",
+        "Refactored and denormalized client Redux data store, reducing page load times by up to 60%",
+        "Created data model and ingestion tooling to handle annually updated government pricing process",
+        "Constructed real-time analytics dashboard using Django to provide insights into multibillion-dollar government program"
+      ]
+    },
+    {
+      "company": "Hack Reactor",
+      "position": "Software Engineer/Labs Instructor",
+      "website": "https://www.hackreactor.com/",
+      "startDate": "2013-09-01",
+      "endDate": "2014-10-31",
+      "highlights": [
+        "After attending the program, stayed on as part-time instructor and engineer",
+        "Facilitated lectures on interview problem solving and interview prep"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Rutgers University",
+      "area": "Physics",
+      "studyType": "B.S.",
+      "startDate": "2006-09-01",
+      "endDate": "2010-05-31",
+      "gpa": "3.5"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Front End Development",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "React",
+        "Redux",
+        "Angular"
+      ]
+    },
+    {
+      "name": "Server Side Development",
+      "keywords": [
+        "Go",
+        "Python",
+        "Django",
+        "Node"
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "keywords": [
+        "AWS (EC2, S3, Lambda, RDS, ECS, EMR)",
+        "Terraform",
+        "Docker",
+        "Packer",
+        "CircleCI"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Coffee",
+      "keywords": [
+        "Home Roasting",
+        "Grinder Hacking",
+        "Croissants"
+      ]
+    },
+    {
+      "name": "Cycling",
+      "keywords": [
+        "Croissants",
+        "Maintenance/Acquiring more tools",
+        "Gravel Racing"
+      ]
+    },
+    {
+      "name": "Croissants",
+      "keywords": [
+        "Croissants"
+      ]
+    }
+  ]
+}

@@ -27,9 +27,9 @@
       "website": "https://willowpump.com",
       "startDate": "2015-04-01",
       "highlights": [
-        "Developed multi-platform desktop R&D tool to facilitate device connectivity and data capture, storage, and visualization of clinical trial data",
+        "Developed multi-platform desktop R&D tool to manage device connectivity and data capture, storage, and visualization of clinical trial data",
         "Devised machine learning algorithm and training tools for translating onboard sensor data into information which is core to device functionality",
-        "Created a suite of calibration and testing software used during the manufacturing line assembly and verification of every device sold"
+        "Created a suite of calibration and testing software used during the manufacturing line assembly and verification of every device"
       ]
     },
     {
@@ -40,7 +40,7 @@
       "endDate": "2019-04-05",
       "highlights": [
         "Designed and implemented full-stack integration CI tests using Cypress, including Golang-based test data generation framework",
-        "Refactored and denormalized client Redux data store, reducing page load times by up to 60%",
+        "Refactored and denormalized client Redux data store, reducing some page load times in half",
         "Created data model and ingestion tooling to handle annually updated government pricing process",
         "Constructed real-time analytics dashboard using Django to provide insights into multibillion-dollar government program"
       ]
@@ -69,18 +69,17 @@
   ],
   "skills": [
     {
-      "name": "Front End Development",
+      "name": "Client",
       "keywords": [
         "HTML",
         "CSS",
         "Javascript",
         "React",
-        "Redux",
-        "Angular"
+        "Redux"
       ]
     },
     {
-      "name": "Server Side Development",
+      "name": "Server",
       "keywords": [
         "Go",
         "Python",

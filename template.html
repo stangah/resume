@@ -11,7 +11,25 @@
     </style>
 </head>
 <body>
-    <div id='resume'>
+    {% if resume.coverletter %}<div class='cover-letter page'>
+         <div class='largeFont centered'>{{ resume.basics.name }}</div>
+         <div class='sectionLine'></div>
+         <div class='senderBlock'>
+             <span>{{ resume.basics.name }}</span>
+             <span>{{ resume.basics.phone }} </span>
+             <span>{{ resume.basics.email }}</span>
+             <span>{{ resume.basics.location.address }}</span>
+             <span>{{ resume.basics.location.city }}, {{ resume.basics.location.postalCode }}</span>
+         </div>
+         <p>{{ resume.coverletter.position }} Position</p>
+         <div class="letterContent">
+             {% for content in resume.coverletter.content %}
+                <p>{{ content }}</p>
+             {% endfor %}
+         </div>
+         <div>{{ resume.coverletter.closing }}</div>
+    </div>{% endif %}
+    <div class='page'>
         <div id='nameBlock' class='largeFont'>
             <span class='name'>
                 {{ resume.basics.name }}{% if resume.basics.label %},{% endif %}

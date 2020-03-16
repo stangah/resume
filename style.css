@@ -20,8 +20,9 @@ a {
   text-decoration: none;
 }
 
-#resume {
-  margin: 0 auto;
+.page {
+  /* height: 27.8cm; */
+  margin: 10px auto;
   max-width: 600px;
   padding: 80px 100px;
   background: #fff;
@@ -34,6 +35,11 @@ a {
   width: 28%;
   vertical-align: top;
   display: inline-block;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .largeFont {
@@ -59,6 +65,11 @@ a {
   width: 80%;
   vertical-align: top;
   display: inline-block;
+}
+
+.letterContent {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .sectionContent ul {
@@ -105,6 +116,15 @@ a {
   page-break-inside: avoid;
 }
 
+.senderBlock {
+  margin: 1cm auto;
+}
+
+.senderBlock span {
+  display: block;
+  text-align: end;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 40em) {
   body {
@@ -141,16 +161,16 @@ a {
   body {
     background: #FFFFFF;
   }
-  #resume {
-    margin: 0 auto;
+  .page {
+    margin: 10px auto 0 auto;
     max-width: 600px;
     padding: 0px 0px;
     border: 0px;
     background: #fff;
     box-shadow: none;
     -webkit-box-shadow: none;
+    page-break-after: always;
   }
-
   a {
     color: black;
   }

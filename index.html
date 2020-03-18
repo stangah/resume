@@ -9,7 +9,7 @@
     <style>
         body {
   background: #EEEEEE;
-  font: 13px "Times New Roman", Times, sans-serif;
+  font: 13px "Times New Roman", Times, serif;
   line-height: 1.4;
   margin: 40px 0;
 }
@@ -29,10 +29,11 @@ a {
   text-decoration: none;
 }
 
-#resume {
-  margin: 0 auto;
-  max-width: 600px;
-  padding: 80px 100px;
+.page {
+  margin: 10px auto;
+  width: 164mm;
+  height: 227mm;
+  padding: 26mm;
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 4px #aaa;
@@ -43,6 +44,11 @@ a {
   width: 28%;
   vertical-align: top;
   display: inline-block;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .largeFont {
@@ -59,15 +65,20 @@ a {
 }
 
 .sectionName {
-  width: 18%;
+  width: 16%;
   vertical-align: top;
   display: inline-block;
 }
 
 .sectionContent {
-  width: 80%;
+  width: 84%;
   vertical-align: top;
   display: inline-block;
+}
+
+.letterContent {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .sectionContent ul {
@@ -114,6 +125,15 @@ a {
   page-break-inside: avoid;
 }
 
+.senderBlock {
+  margin: 1cm auto;
+}
+
+.senderBlock span {
+  display: block;
+  text-align: end;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 40em) {
   body {
@@ -150,16 +170,14 @@ a {
   body {
     background: #FFFFFF;
   }
-  #resume {
-    margin: 0 auto;
-    max-width: 600px;
-    padding: 0px 0px;
-    border: 0px;
+  .page {
+    padding: 0;
+    border: 0;
     background: #fff;
     box-shadow: none;
     -webkit-box-shadow: none;
+    page-break-after: always;
   }
-
   a {
     color: black;
   }
@@ -168,7 +186,8 @@ a {
     </style>
 </head>
 <body>
-    <div id='resume'>
+    
+    <div class='page'>
         <div id='nameBlock' class='largeFont'>
             <span class='name'>
                 Patrick Stanger,
@@ -214,6 +233,16 @@ a {
         <div class='sectionLine'></div>
         
         
+        <div id='summaryBlock' class="sectionBlock">
+            <div class='sectionName'>
+                <span>SUMMARY</span>
+            </div>
+            <div class='sectionContent'>
+                <span>I'm a lifelong learner, DIYer, taker-aparter, and problem-solver. For six years I've been using my powers for good as a fullstack software engineer in the SF Bay Area, taking ownership of complex problems and delivering them under rigid deadlines</span>
+            </div>
+        </div>
+        <div class='sectionLine'></div>
+        
         
         
         <div id='workBlock' class="sectionBlock">
@@ -237,11 +266,13 @@ a {
                     
                     <ul class='highlights'>
                         
-                        <li>Developed multi-platform desktop R&D tool to manage device connectivity and data capture, storage, and visualization of clinical trial data</li>
+                        <li>Supported an extended dynamic hardware/firmware development process, often with changing requirements and under tight timelines</li>
                         
-                        <li>Devised machine learning algorithm and training tools for translating onboard sensor data into information which is core to device functionality</li>
+                        <li>Designed and built multi-platform R&D tool, enabling the capture, storage, and visualization of clinical trial data</li>
                         
-                        <li>Created a suite of calibration and testing software used during the manufacturing line assembly and verification of every device</li>
+                        <li>Devised statistical algorithm and training tool that is essential to core device functionality</li>
+                        
+                        <li>Developed a series of calibration and testing applications that gives stakeholders confidence in the quality of every device sold</li>
                         
                     </ul>
                     
@@ -264,7 +295,7 @@ a {
                     
                     <ul class='highlights'>
                         
-                        <li>Designed and implemented full-stack integration CI tests using Cypress, including Golang-based test data generation framework</li>
+                        <li>Bootstrapped integration CI testing suite in CircleCI, Cypress, and Golang, bolstering confidence in our rapidly developing application</li>
                         
                         <li>Refactored and denormalized client Redux data store, reducing some page load times in half</li>
                         
@@ -281,11 +312,34 @@ a {
                 <div class="jobBlock">
                     <div class='blockHeader'>
                         <span class='title'>
+                            Creative Channel Services - Contract Software Engineer
+                        </span>
+                        
+                        <span class='date'>
+                            January 2014 &mdash; April 2015
+                        </span>
+                        
+                    </div>
+                    <div><a href=''></a></div>
+                    
+                    <ul class='highlights'>
+                        
+                        <li>Built a web admin portal and BaaS data model to support a mobile task distribution application</li>
+                        
+                    </ul>
+                    
+                    
+                    <div class='separator'></div>
+                </div>
+                
+                <div class="jobBlock">
+                    <div class='blockHeader'>
+                        <span class='title'>
                             Hack Reactor - Software Engineer/Labs Instructor
                         </span>
                         
                         <span class='date'>
-                            September 2013 &mdash; October 2014
+                            January 2014 &mdash; October 2014
                         </span>
                         
                     </div>
@@ -293,9 +347,7 @@ a {
                     
                     <ul class='highlights'>
                         
-                        <li>After attending the program, stayed on as part-time instructor and engineer</li>
-                        
-                        <li>Facilitated lectures on interview problem solving and interview prep</li>
+                        <li>Held lectures on problem solving and performed one-on-one interview prep</li>
                         
                     </ul>
                     
@@ -323,12 +375,32 @@ a {
                 
                 <div class='educationBlock'>
                     <span class='title'>
+                        Hack Reactor
+                    </span>
+                    
+                    <span class='date'>
+                        September 2013 &mdash; December 2013
+                    </span>
+                    
+                    
+                    
+                </div>
+                <div class='separator'></div>
+                
+                <div class='educationBlock'>
+                    <span class='title'>
                         Rutgers University
                     </span>
                     
-                    <div class=''>
-                        B.S.  - Physics, GPA: 3.5
+                    <span class='date'>
+                        September 2006 &mdash; May 2010
+                    </span>
+                    
+                    
+                    <div>
+                        B.S. - Physics, GPA: 3.5
                     </div>
+                    
                     
                 </div>
                 
@@ -429,13 +501,13 @@ a {
                 <span class='name'>Cycling</span>
                 <span class='keywords'> <em>[
                 
-                Croissants
+                Gravel Racing
                 , 
                 
                 Maintenance/Acquiring more tools
                 , 
                 
-                Gravel Racing
+                Croissants
                 
                 
                 ]</em></span>

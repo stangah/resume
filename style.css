@@ -1,6 +1,6 @@
 body {
   background: #EEEEEE;
-  font: 13px "Times New Roman", Times, sans-serif;
+  font: 13px "Times New Roman", Times, serif;
   line-height: 1.4;
   margin: 40px 0;
 }
@@ -21,10 +21,10 @@ a {
 }
 
 .page {
-  /* height: 27.8cm; */
   margin: 10px auto;
-  max-width: 600px;
-  padding: 80px 100px;
+  width: 164mm;
+  height: 227mm;
+  padding: 26mm;
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 4px #aaa;
@@ -56,13 +56,13 @@ a {
 }
 
 .sectionName {
-  width: 18%;
+  width: 16%;
   vertical-align: top;
   display: inline-block;
 }
 
 .sectionContent {
-  width: 80%;
+  width: 84%;
   vertical-align: top;
   display: inline-block;
 }
@@ -162,10 +162,8 @@ a {
     background: #FFFFFF;
   }
   .page {
-    margin: 10px auto 0 auto;
-    max-width: 600px;
-    padding: 0px 0px;
-    border: 0px;
+    padding: 0;
+    border: 0;
     background: #fff;
     box-shadow: none;
     -webkit-box-shadow: none;

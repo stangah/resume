@@ -230,14 +230,16 @@
                     <span class='title'>
                         {% if ed.institution %}{{ed.institution}}{% endif %}
                     </span>
-                    {% if startDate %}
+                    {% if ed.startDate %}
                     <span class='date'>
-                        {% if ed.startDate %}{{ed.startDate}}{% endif %} &mdash; {% if ed.endDate %}{{ed.endDate}}{% else %}Present{% endif %}
+                        {% if ed.startDate %}{{ed.startDate|simpledate}}{% endif %} &mdash; {% if ed.endDate %}{{ed.endDate|simpledate}}{% else %}Present{% endif %}
                     </span>
                     {% endif %}
-                    <div class=''>
-                        {% if ed.studyType %}{{ed.studyType}} {% endif %} - {% if ed.area %}{{ed.area}}{% endif %}{% if ed.gpa %}, GPA: {{ ed.gpa }}{% endif %}
+                    {% if ed.studyType %}
+                    <div>
+                        {{ed.studyType}} - {% if ed.area %}{{ed.area}}{% endif %}{% if ed.gpa %}, GPA: {{ ed.gpa }}{% endif %}
                     </div>
+                    {% endif %}
                     {% if ed.courses %}
                     <div id='coursesBlock'>
                         {% for course in ed.courses %}

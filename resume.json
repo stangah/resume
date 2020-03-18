@@ -4,7 +4,7 @@
     "label": "Software Engineer",
     "email": "pstanger@gmail.com",
     "phone": "(609) 571-6585",
-    "summary": "I'm a lifelong learner, DIYer, taker-aparter, and problem-solver. For the last six years I've been leveraging those strengths as a fullstack software engineer in the Bay Area",
+    "summary": "I'm a lifelong learner, DIYer, taker-aparter, and problem-solver. For six years I've been using my powers for good as a fullstack software engineer in the SF Bay Area, taking ownership of complex problems and delivering them under rigid deadlines",
     "location": {
       "address": "5044 Diamond Heights Blvd",
       "postalCode": "CA 94131",
@@ -28,9 +28,10 @@
       "website": "https://willowpump.com",
       "startDate": "2015-04-01",
       "highlights": [
-        "Developed multi-platform desktop R&D tool to manage device connectivity and data capture, storage, and visualization of clinical trial data",
-        "Devised machine learning algorithm and training tools for translating onboard sensor data into information which is core to device functionality",
-        "Created a suite of calibration and testing software used during the manufacturing line assembly and verification of every device"
+        "Supported an extended dynamic hardware/firmware development process, often with changing requirements and under tight timelines",
+        "Designed and built multi-platform R&D tool, enabling the capture, storage, and visualization of clinical trial data",
+        "Devised statistical algorithm and training tool that is essential to core device functionality",
+        "Developed a series of calibration and testing applications that gives stakeholders confidence in the quality of every device sold"
       ]
     },
     {
@@ -40,25 +41,38 @@
       "startDate": "2015-07-01",
       "endDate": "2019-04-05",
       "highlights": [
-        "Designed and implemented full-stack integration CI tests using Cypress, including Golang-based test data generation framework",
+        "Bootstrapped integration CI testing suite in CircleCI, Cypress, and Golang, bolstering confidence in our rapidly developing application",
         "Refactored and denormalized client Redux data store, reducing some page load times in half",
         "Created data model and ingestion tooling to handle annually updated government pricing process",
         "Constructed real-time analytics dashboard using Django to provide insights into multibillion-dollar government program"
       ]
     },
     {
+      "company": "Creative Channel Services",
+      "position": "Contract Software Engineer",
+      "startDate": "2014-01-01",
+      "endDate": "2015-04-30",
+      "highlights": [
+        "Built a web admin portal and BaaS data model to support a mobile task distribution application"
+      ]
+    },
+    {
       "company": "Hack Reactor",
       "position": "Software Engineer/Labs Instructor",
       "website": "https://www.hackreactor.com/",
-      "startDate": "2013-09-01",
+      "startDate": "2014-01-01",
       "endDate": "2014-10-31",
       "highlights": [
-        "After attending the program, stayed on as part-time instructor and engineer",
-        "Facilitated lectures on interview problem solving and interview prep"
+        "Held lectures on problem solving and performed one-on-one interview prep"
       ]
     }
   ],
   "education": [
+    {
+      "institution": "Hack Reactor",
+      "startDate": "2013-09-01",
+      "endDate": "2013-12-31"
+    },
     {
       "institution": "Rutgers University",
       "area": "Physics",
@@ -111,9 +125,9 @@
     {
       "name": "Cycling",
       "keywords": [
-        "Croissants",
+        "Gravel Racing",
         "Maintenance/Acquiring more tools",
-        "Gravel Racing"
+        "Croissants"
       ]
     },
     {

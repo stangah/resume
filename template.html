@@ -57,7 +57,7 @@
                 {% for profile in resume.basics.profiles %}
                 {% if profile.url %}
                 <span class='url'>
-                    <a href='{{url}}'>{{ profile.url }}</a>
+                    <a href='{{profile.url}}'>{{ profile.url }}</a>
                 </span>
                 {% if not loop.last %}<span class='divider'>|</span>{% endif %}
                 {% endif %}
@@ -97,7 +97,7 @@
                         </span>
                         {% endif %}
                     </div>
-                    <div><a href='{{website}}'>{{work.website}}</a></div>
+                    <div><a href='{{work.website}}'>{{work.website}}</a></div>
                     {% if work.highlights %}
                     <ul class='highlights'>
                         {% for highlight in work.highlights %}

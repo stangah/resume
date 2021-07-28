@@ -8,10 +8,8 @@
 
     <style>
         body {
-  background: #EEEEEE;
-  font: 13px "Times New Roman", Times, serif;
-  line-height: 1.4;
   margin: 40px 0;
+  background: #EEEEEE;
 }
 em {
   color: #999;
@@ -30,14 +28,19 @@ a {
 }
 
 .page {
-  margin: 10px auto;
-  width: 164mm;
-  height: 227mm;
-  padding: 26mm;
+  font: 13px "Times New Roman", Times, serif;
+  line-height: 1.4;
+  width: 8.5in;
+  height: 11in;
+  margin: 0 auto;
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 4px #aaa;
   -webkit-box-shadow: 2px 2px 4px #aaa;
+}
+
+.contents {
+  padding: 0.5in 0.5in 0 0.5in;
 }
 
 .coursesList {
@@ -167,8 +170,9 @@ a {
 }
 
 @media print {
-  body {
-    background: #FFFFFF;
+  html, body {
+    height: auto;
+    page-break-after: auto;
   }
   .page {
     padding: 0;
@@ -176,7 +180,10 @@ a {
     background: #fff;
     box-shadow: none;
     -webkit-box-shadow: none;
-    page-break-after: always;
+    page-break-after: auto;
+  }
+  .contents {
+    padding: 0 0.5in;
   }
   a {
     color: black;
@@ -188,344 +195,371 @@ a {
 <body>
     
     <div class='page'>
-        <div id='nameBlock' class='largeFont'>
-            <span class='name'>
-                Patrick Stanger,
-            </span>
-            
-            <span class='label'>Software Engineer</span>
-            
-        </div>
-        <div id='basicsBlock' class='smallFont'>
-            <div class='contactBlock'>
-                
-                <span class='email'>pstanger@gmail.com</span>
-                
-                
-                <span class='divider'>|</span>
-                <span class='phone'>(609) 571-6585</span>
-                
-                <span class='divider'>|</span>
-                <span class='address'>
-                    San Francisco, California, US
-                </span>
-            </div>
-            
-            <div id='profilesBlock'>
-                
-                
-                <span class='url'>
-                    <a href='https://github.com/stangah'>https://github.com/stangah</a>
-                </span>
-                <span class='divider'>|</span>
-                
-                
-                
-                <span class='url'>
-                    <a href='https://www.linkedin.com/in/pstanger'>https://www.linkedin.com/in/pstanger</a>
+        <div class='contents'>
+            <div id='nameBlock' class='largeFont'>
+                <span class='name'>
+                    Patrick Stanger,
                 </span>
                 
-                
-                
-            </div>
-            
-        </div>
-        <div class='sectionLine'></div>
-        
-        
-        <div id='summaryBlock' class="sectionBlock">
-            <div class='sectionName'>
-                <span>SUMMARY</span>
-            </div>
-            <div class='sectionContent'>
-                <span>I'm a lifelong learner, DIYer, taker-aparter, and problem-solver. For six years I've been using my powers for good as a fullstack software engineer in the SF Bay Area, taking ownership of complex problems and delivering them under rigid deadlines</span>
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        
-        
-        
-        <div id='workBlock' class="sectionBlock">
-            <div class='sectionName'>
-                <span>EXPERIENCE</span>
-            </div>
-            <div class='sectionContent'>
-                
-                <div class="jobBlock">
-                    <div class='blockHeader'>
-                        <span class='title'>
-                            Willow - Contract Software Engineer
-                        </span>
-                        
-                        <span class='date'>
-                            April 2015 &mdash; Present
-                        </span>
-                        
-                    </div>
-                    <div><a href='https://willowpump.com'>https://willowpump.com</a></div>
-                    
-                    <ul class='highlights'>
-                        
-                        <li>Supported an extended dynamic hardware/firmware development process, often with changing requirements and under tight timelines</li>
-                        
-                        <li>Designed and built multi-platform R&D tool, enabling the capture, storage, and visualization of clinical trial data</li>
-                        
-                        <li>Devised statistical algorithm and training tool that is essential to core device functionality</li>
-                        
-                        <li>Developed a series of calibration and testing applications that gives stakeholders confidence in the quality of every device sold</li>
-                        
-                    </ul>
-                    
-                    
-                    <div class='separator'></div>
-                </div>
-                
-                <div class="jobBlock">
-                    <div class='blockHeader'>
-                        <span class='title'>
-                            Truss - Software Engineer
-                        </span>
-                        
-                        <span class='date'>
-                            July 2015 &mdash; April 2019
-                        </span>
-                        
-                    </div>
-                    <div><a href='https://truss.works'>https://truss.works</a></div>
-                    
-                    <ul class='highlights'>
-                        
-                        <li>Bootstrapped integration CI testing suite in CircleCI, Cypress, and Golang, bolstering confidence in our rapidly developing application</li>
-                        
-                        <li>Refactored and denormalized client Redux data store, reducing some page load times in half</li>
-                        
-                        <li>Created data model and ingestion tooling to handle annually updated government pricing process</li>
-                        
-                        <li>Constructed real-time analytics dashboard using Django to provide insights into multibillion-dollar government program</li>
-                        
-                    </ul>
-                    
-                    
-                    <div class='separator'></div>
-                </div>
-                
-                <div class="jobBlock">
-                    <div class='blockHeader'>
-                        <span class='title'>
-                            Creative Channel Services - Contract Software Engineer
-                        </span>
-                        
-                        <span class='date'>
-                            January 2014 &mdash; April 2015
-                        </span>
-                        
-                    </div>
-                    <div><a href=''></a></div>
-                    
-                    <ul class='highlights'>
-                        
-                        <li>Built a web admin portal and BaaS data model to support a mobile task distribution application</li>
-                        
-                    </ul>
-                    
-                    
-                    <div class='separator'></div>
-                </div>
-                
-                <div class="jobBlock">
-                    <div class='blockHeader'>
-                        <span class='title'>
-                            Hack Reactor - Software Engineer/Labs Instructor
-                        </span>
-                        
-                        <span class='date'>
-                            January 2014 &mdash; October 2014
-                        </span>
-                        
-                    </div>
-                    <div><a href='https://www.hackreactor.com/'>https://www.hackreactor.com/</a></div>
-                    
-                    <ul class='highlights'>
-                        
-                        <li>Held lectures on problem solving and performed one-on-one interview prep</li>
-                        
-                    </ul>
-                    
-                    
-                    
-                </div>
+                <span class='label'>Software Engineer</span>
                 
             </div>
-        </div>
-        <div class='sectionLine'></div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <div id='education' class="sectionBlock">
-            <div class='sectionName'>
-                <span>EDUCATION</span>
-            </div>
-            <div class='sectionContent'>
-                
-                <div class='educationBlock'>
-                    <span class='title'>
-                        Hack Reactor
+            <div id='basicsBlock' class='smallFont'>
+                <div class='contactBlock'>
+                    
+                    <span class='email'>pstanger@gmail.com</span>
+                    
+                    
+                    <span class='divider'>|</span>
+                    <span class='phone'>(609) 571-6585</span>
+                    
+                    <span class='divider'>|</span>
+                    <span class='address'>
+                        San Francisco, California, US
                     </span>
+                </div>
+                
+                <div id='profilesBlock'>
                     
-                    <span class='date'>
-                        September 2013 &mdash; December 2013
+                    
+                    <span class='url'>
+                        <a href='https://github.com/stangah'>https://github.com/stangah</a>
+                    </span>
+                    <span class='divider'>|</span>
+                    
+                    
+                    
+                    <span class='url'>
+                        <a href='https://www.linkedin.com/in/pstanger'>https://www.linkedin.com/in/pstanger</a>
                     </span>
                     
                     
                     
                 </div>
-                <div class='separator'></div>
-                
-                <div class='educationBlock'>
-                    <span class='title'>
-                        Rutgers University
-                    </span>
-                    
-                    <span class='date'>
-                        September 2006 &mdash; May 2010
-                    </span>
-                    
-                    
-                    <div>
-                        B.S. - Physics, GPA: 3.5
-                    </div>
-                    
-                    
-                </div>
-                
-                
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        
-        
-        
-        <div id='skills' class="sectionBlock">
-            <div class='sectionName'>
-                <span>SKILLS</span>
-            </div>
-            <div class='sectionContent'>
-                
-                <div class='skillBlock'>
-                    <span class='title'>Client:</span>
-                    
-                    
-                    <span>HTML</span>, 
-                    
-                    <span>CSS</span>, 
-                    
-                    <span>Javascript</span>, 
-                    
-                    <span>React</span>, 
-                    
-                    <span>Redux</span>
-                    
-                    
-                    
-                </div>
-                
-                <div class='skillBlock'>
-                    <span class='title'>Server:</span>
-                    
-                    
-                    <span>Go</span>, 
-                    
-                    <span>Python</span>, 
-                    
-                    <span>Django</span>, 
-                    
-                    <span>Node</span>
-                    
-                    
-                    
-                </div>
-                
-                <div class='skillBlock'>
-                    <span class='title'>Infrastructure:</span>
-                    
-                    
-                    <span>AWS (EC2, S3, Lambda, RDS, ECS, EMR)</span>, 
-                    
-                    <span>Terraform</span>, 
-                    
-                    <span>Docker</span>, 
-                    
-                    <span>Packer</span>, 
-                    
-                    <span>CircleCI</span>
-                    
-                    
-                    
-                </div>
-                
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        
-        
-        
-        
-        
-        <div id='interests' class="sectionBlock">
-            <div class='sectionName'>
-                <span>INTERESTS</span>
-            </div>
-            <div class='sectionContent'>
-                
-                <span class='name'>Coffee</span>
-                <span class='keywords'> <em>[
-                
-                Home Roasting
-                , 
-                
-                Grinder Hacking
-                , 
-                
-                Croissants
-                
-                
-                ]</em></span>
-                <span>, </span>
-                
-                <span class='name'>Cycling</span>
-                <span class='keywords'> <em>[
-                
-                Gravel Racing
-                , 
-                
-                Maintenance/Acquiring more tools
-                , 
-                
-                Croissants
-                
-                
-                ]</em></span>
-                <span>, </span>
-                
-                <span class='name'>Croissants</span>
-                <span class='keywords'> <em>[
-                
-                Croissants
-                
-                
-                ]</em></span>
-                
                 
             </div>
             <div class='sectionLine'></div>
+
+            
+            <div id='summaryBlock' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>SUMMARY</span>
+                </div>
+                <div class='sectionContent'>
+                    <span>I'm a lifelong learner, DIYer, taker-aparter, and problem-solver. For eight years I've been using my powers for good as a software/firmware engineer in the SF Bay Area, taking ownership of complex problems and delivering them under challenging deadlines</span>
+                </div>
+            </div>
+            <div class='sectionLine'></div>
+            
+
+            
+            <div id='workBlock' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>EXPERIENCE</span>
+                </div>
+                <div class='sectionContent'>
+                    
+                    <div class="jobBlock">
+                        <div class='blockHeader'>
+                            <span class='title'>
+                                Willow - Senior Firmware Engineer
+                            </span>
+                            
+                            <span class='date'>
+                                May 2020 &mdash; Present
+                            </span>
+                            
+                        </div>
+                        <div><a href='https://willowpump.com'>https://willowpump.com</a></div>
+                        
+                        <ul class='highlights'>
+                            
+                            <li>Designed and implemented state controllers for pumping and LED control in a new greenfield pumping product</li>
+                            
+                            <li>Helped spin up automated testing/linting of native firmware code in a CI environment</li>
+                            
+                            <li>Developed manufacturing line testing and validation software to be run on every new unit</li>
+                            
+                        </ul>
+                        
+                        
+                        <div class='separator'></div>
+                    </div>
+                    
+                    <div class="jobBlock">
+                        <div class='blockHeader'>
+                            <span class='title'>
+                                Willow - Contract Software Engineer
+                            </span>
+                            
+                            <span class='date'>
+                                April 2015 &mdash; May 2020
+                            </span>
+                            
+                        </div>
+                        <div><a href='https://willowpump.com'>https://willowpump.com</a></div>
+                        
+                        <ul class='highlights'>
+                            
+                            <li>Supported an extended dynamic hardware/firmware development process, often with changing requirements and under tight timelines</li>
+                            
+                            <li>Designed and built multi-platform R&D tool, enabling the capture, storage, and visualization of clinical trial data</li>
+                            
+                            <li>Devised statistical algorithm and training tool that is essential to core device functionality</li>
+                            
+                            <li>Developed a series of calibration and testing applications that gives stakeholders confidence in the quality of every device sold</li>
+                            
+                        </ul>
+                        
+                        
+                        <div class='separator'></div>
+                    </div>
+                    
+                    <div class="jobBlock">
+                        <div class='blockHeader'>
+                            <span class='title'>
+                                Truss - Software Engineer
+                            </span>
+                            
+                            <span class='date'>
+                                July 2015 &mdash; April 2019
+                            </span>
+                            
+                        </div>
+                        <div><a href='https://truss.works'>https://truss.works</a></div>
+                        
+                        <ul class='highlights'>
+                            
+                            <li>Bootstrapped integration CI testing suite in CircleCI, Cypress, and Golang, bolstering confidence in our rapidly developing application</li>
+                            
+                            <li>Refactored and denormalized client Redux data store, reducing some page load times in half</li>
+                            
+                            <li>Created data model and ingestion tooling to handle annually updated government pricing process</li>
+                            
+                            <li>Constructed real-time analytics dashboard using Django to provide insights into multibillion-dollar government program</li>
+                            
+                        </ul>
+                        
+                        
+                        <div class='separator'></div>
+                    </div>
+                    
+                    <div class="jobBlock">
+                        <div class='blockHeader'>
+                            <span class='title'>
+                                Creative Channel Services - Contract Software Engineer
+                            </span>
+                            
+                            <span class='date'>
+                                January 2014 &mdash; April 2015
+                            </span>
+                            
+                        </div>
+                        <div><a href=''></a></div>
+                        
+                        <ul class='highlights'>
+                            
+                            <li>Built a web admin portal and BaaS data model to support a mobile task distribution application</li>
+                            
+                        </ul>
+                        
+                        
+                        <div class='separator'></div>
+                    </div>
+                    
+                    <div class="jobBlock">
+                        <div class='blockHeader'>
+                            <span class='title'>
+                                Hack Reactor - Software Engineer/Labs Instructor
+                            </span>
+                            
+                            <span class='date'>
+                                January 2014 &mdash; October 2014
+                            </span>
+                            
+                        </div>
+                        <div><a href='https://www.hackreactor.com/'>https://www.hackreactor.com/</a></div>
+                        
+                        <ul class='highlights'>
+                            
+                            <li>Held lectures on problem solving and performed one-on-one interview prep</li>
+                            
+                        </ul>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class='sectionLine'></div>
+            
+
+            
+
+            
+
+            
+
+            
+            <div id='education' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>EDUCATION</span>
+                </div>
+                <div class='sectionContent'>
+                    
+                    <div class='educationBlock'>
+                        <span class='title'>
+                            Hack Reactor
+                        </span>
+                        
+                        <span class='date'>
+                            September 2013 &mdash; December 2013
+                        </span>
+                        
+                        
+                        
+                    </div>
+                    <div class='separator'></div>
+                    
+                    <div class='educationBlock'>
+                        <span class='title'>
+                            Rutgers University
+                        </span>
+                        
+                        <span class='date'>
+                            September 2006 &mdash; May 2010
+                        </span>
+                        
+                        
+                        <div>
+                            B.S. - Physics, GPA: 3.5
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class='sectionLine'></div>
+            
+
+            
+            <div id='skills' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>SKILLS</span>
+                </div>
+                <div class='sectionContent'>
+                    
+                    <div class='skillBlock'>
+                        <span class='title'>Client:</span>
+                        
+                        
+                        <span>HTML</span>, 
+                        
+                        <span>CSS</span>, 
+                        
+                        <span>Javascript</span>, 
+                        
+                        <span>React</span>, 
+                        
+                        <span>Redux</span>
+                        
+                        
+                        
+                    </div>
+                    
+                    <div class='skillBlock'>
+                        <span class='title'>Server:</span>
+                        
+                        
+                        <span>Go</span>, 
+                        
+                        <span>Python</span>, 
+                        
+                        <span>Node</span>
+                        
+                        
+                        
+                    </div>
+                    
+                    <div class='skillBlock'>
+                        <span class='title'>Infrastructure:</span>
+                        
+                        
+                        <span>AWS (EC2, S3, Lambda, EMR)</span>, 
+                        
+                        <span>Terraform</span>, 
+                        
+                        <span>Docker</span>, 
+                        
+                        <span>Packer</span>, 
+                        
+                        <span>CircleCI</span>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class='sectionLine'></div>
+            
+
+            
+
+            
+            <div id='interests' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>INTERESTS</span>
+                </div>
+                <div class='sectionContent'>
+                    
+                    <span class='name'>Coffee</span>
+                    <span class='keywords'> <em>[
+                    
+                    Home Roasting
+                    , 
+                    
+                    Grinder Hacking
+                    , 
+                    
+                    Croissants
+                    
+                    
+                    ]</em></span>
+                    <span>, </span>
+                    
+                    <span class='name'>Cycling</span>
+                    <span class='keywords'> <em>[
+                    
+                    Gravel Racing
+                    , 
+                    
+                    Buying single purpose tools
+                    , 
+                    
+                    Croissants
+                    
+                    
+                    ]</em></span>
+                    <span>, </span>
+                    
+                    <span class='name'>Croissants</span>
+                    <span class='keywords'> <em>[
+                    
+                    Croissants
+                    
+                    
+                    ]</em></span>
+                    
+                    
+                </div>
+                <div class='sectionLine'></div>
+            </div>
+            
         </div>
-        
     </div>
 </body>
 </html>

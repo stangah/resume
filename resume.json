@@ -4,10 +4,8 @@
     "label": "Software Engineer",
     "email": "pstanger@gmail.com",
     "phone": "(609) 571-6585",
-    "summary": "I'm a lifelong learner, DIYer, taker-aparter, and problem-solver. For six years I've been using my powers for good as a fullstack software engineer in the SF Bay Area, taking ownership of complex problems and delivering them under rigid deadlines",
+    "summary": "I'm a lifelong learner, DIYer, taker-aparter, and problem-solver. For eight years I've been using my powers for good as a software/firmware engineer in the SF Bay Area, taking ownership of complex problems and delivering them under challenging deadlines",
     "location": {
-      "address": "5044 Diamond Heights Blvd",
-      "postalCode": "CA 94131",
       "city": "San Francisco",
       "countryCode": "US",
       "region": "California"
@@ -24,9 +22,21 @@
   "work": [
     {
       "company": "Willow",
+      "position": "Senior Firmware Engineer",
+      "website": "https://willowpump.com",
+      "startDate": "2020-05-01",
+      "highlights": [
+        "Designed and implemented state controllers for pumping and LED control in a new greenfield pumping product",
+        "Helped spin up automated testing/linting of native firmware code in a CI environment",
+        "Developed manufacturing line testing and validation software to be run on every new unit"
+      ]
+    },
+    {
+      "company": "Willow",
       "position": "Contract Software Engineer",
       "website": "https://willowpump.com",
       "startDate": "2015-04-01",
+      "endDate": "2020-05-01",
       "highlights": [
         "Supported an extended dynamic hardware/firmware development process, often with changing requirements and under tight timelines",
         "Designed and built multi-platform R&D tool, enabling the capture, storage, and visualization of clinical trial data",
@@ -98,14 +108,13 @@
       "keywords": [
         "Go",
         "Python",
-        "Django",
         "Node"
       ]
     },
     {
       "name": "Infrastructure",
       "keywords": [
-        "AWS (EC2, S3, Lambda, RDS, ECS, EMR)",
+        "AWS (EC2, S3, Lambda, EMR)",
         "Terraform",
         "Docker",
         "Packer",
@@ -126,7 +135,7 @@
       "name": "Cycling",
       "keywords": [
         "Gravel Racing",
-        "Maintenance/Acquiring more tools",
+        "Buying single purpose tools",
         "Croissants"
       ]
     },

@@ -1,8 +1,6 @@
 body {
-  background: #EEEEEE;
-  font: 13px "Times New Roman", Times, serif;
-  line-height: 1.4;
   margin: 40px 0;
+  background: #EEEEEE;
 }
 em {
   color: #999;
@@ -21,14 +19,19 @@ a {
 }
 
 .page {
-  margin: 10px auto;
-  width: 164mm;
-  height: 227mm;
-  padding: 26mm;
+  font: 13px "Times New Roman", Times, serif;
+  line-height: 1.4;
+  width: 8.5in;
+  height: 11in;
+  margin: 0 auto;
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 4px #aaa;
   -webkit-box-shadow: 2px 2px 4px #aaa;
+}
+
+.contents {
+  padding: 0.5in 0.5in 0 0.5in;
 }
 
 .coursesList {
@@ -158,8 +161,9 @@ a {
 }
 
 @media print {
-  body {
-    background: #FFFFFF;
+  html, body {
+    height: auto;
+    page-break-after: auto;
   }
   .page {
     padding: 0;
@@ -167,7 +171,10 @@ a {
     background: #fff;
     box-shadow: none;
     -webkit-box-shadow: none;
-    page-break-after: always;
+    page-break-after: auto;
+  }
+  .contents {
+    padding: 0 0.5in;
   }
   a {
     color: black;

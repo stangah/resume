@@ -30,299 +30,301 @@
          <div>{{ resume.coverletter.closing }}</div>
     </div>{% endif %}
     <div class='page'>
-        <div id='nameBlock' class='largeFont'>
-            <span class='name'>
-                {{ resume.basics.name }}{% if resume.basics.label %},{% endif %}
-            </span>
-            {% if resume.basics.label %}
-            <span class='label'>{{resume.basics.label}}</span>
-            {% endif %}
-        </div>
-        <div id='basicsBlock' class='smallFont'>
-            <div class='contactBlock'>
-                {% if resume.basics.email %}
-                <span class='email'>{{resume.basics.email}}</span>
-                {% endif %}
-                {% if resume.basics.phone %}
-                <span class='divider'>|</span>
-                <span class='phone'>{{resume.basics.phone}}</span>
-                {% endif %}
-                <span class='divider'>|</span>
-                <span class='address'>
-                    {% if resume.basics.location.city %}{{resume.basics.location.city}}{% endif %}{% if resume.basics.location.region %}, {{resume.basics.location.region}}{% endif %}{% if resume.basics.location.countryCode %}, {{resume.basics.location.countryCode}}{% endif %}
+        <div class='contents'>
+            <div id='nameBlock' class='largeFont'>
+                <span class='name'>
+                    {{ resume.basics.name }}{% if resume.basics.label %},{% endif %}
                 </span>
-            </div>
-            {% if resume.basics.profiles %}
-            <div id='profilesBlock'>
-                {% for profile in resume.basics.profiles %}
-                {% if profile.url %}
-                <span class='url'>
-                    <a href='{{profile.url}}'>{{ profile.url }}</a>
-                </span>
-                {% if not loop.last %}<span class='divider'>|</span>{% endif %}
+                {% if resume.basics.label %}
+                <span class='label'>{{resume.basics.label}}</span>
                 {% endif %}
-                {% endfor %}
             </div>
+            <div id='basicsBlock' class='smallFont'>
+                <div class='contactBlock'>
+                    {% if resume.basics.email %}
+                    <span class='email'>{{resume.basics.email}}</span>
+                    {% endif %}
+                    {% if resume.basics.phone %}
+                    <span class='divider'>|</span>
+                    <span class='phone'>{{resume.basics.phone}}</span>
+                    {% endif %}
+                    <span class='divider'>|</span>
+                    <span class='address'>
+                        {% if resume.basics.location.city %}{{resume.basics.location.city}}{% endif %}{% if resume.basics.location.region %}, {{resume.basics.location.region}}{% endif %}{% if resume.basics.location.countryCode %}, {{resume.basics.location.countryCode}}{% endif %}
+                    </span>
+                </div>
+                {% if resume.basics.profiles %}
+                <div id='profilesBlock'>
+                    {% for profile in resume.basics.profiles %}
+                    {% if profile.url %}
+                    <span class='url'>
+                        <a href='{{profile.url}}'>{{ profile.url }}</a>
+                    </span>
+                    {% if not loop.last %}<span class='divider'>|</span>{% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class='sectionLine'></div>
+
+            {% if resume.basics.summary %}
+            <div id='summaryBlock' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>SUMMARY</span>
+                </div>
+                <div class='sectionContent'>
+                    <span>{{resume.basics.summary}}</span>
+                </div>
+            </div>
+            <div class='sectionLine'></div>
             {% endif %}
-        </div>
-        <div class='sectionLine'></div>
-        
-        {% if resume.basics.summary %}
-        <div id='summaryBlock' class="sectionBlock">
-            <div class='sectionName'>
-                <span>SUMMARY</span>
+
+            {% if resume.work %}
+            <div id='workBlock' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>EXPERIENCE</span>
+                </div>
+                <div class='sectionContent'>
+                    {% for work in resume.work %}
+                    <div class="jobBlock">
+                        <div class='blockHeader'>
+                            <span class='title'>
+                                {% if work.company %}{{work.company}}{% endif %}{% if work.position %} - {{work.position}}{% endif %}
+                            </span>
+                            {% if work.startDate %}
+                            <span class='date'>
+                                {% if work.startDate %}{{ work.startDate|simpledate }}{% endif %} &mdash; {% if work.endDate %}{{ work.endDate|simpledate }}{% else %}Present{% endif %}
+                            </span>
+                            {% endif %}
+                        </div>
+                        <div><a href='{{work.website}}'>{{work.website}}</a></div>
+                        {% if work.highlights %}
+                        <ul class='highlights'>
+                            {% for highlight in work.highlights %}
+                            <li>{{ highlight }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if work.details %}
+                        <ul class='details'>
+                            {% for detail in work.details %}
+                            <li>{% if detail.text %}{{detail.text}}{% endif %}{% if detail.comment %} <em>[{{detail.comment}}]</em>{% endif %}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if not loop.last %}<div class='separator'></div>{% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-            <div class='sectionContent'>
-                <span>{{resume.basics.summary}}</span>
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        {% endif %}
-        
-        {% if resume.work %}
-        <div id='workBlock' class="sectionBlock">
-            <div class='sectionName'>
-                <span>EXPERIENCE</span>
-            </div>
-            <div class='sectionContent'>
-                {% for work in resume.work %}
-                <div class="jobBlock">
+            <div class='sectionLine'></div>
+            {% endif %}
+
+            {% if resume.publications %}
+            <div id='publications'>
+                <div class='sectionName'>
+                    <span>PUBLICATIONS</span>
+                </div>
+                <div class='sectionContent'>
+                    {% for pub in resume.publications %}
                     <div class='blockHeader'>
                         <span class='title'>
-                            {% if work.company %}{{work.company}}{% endif %}{% if work.position %} - {{work.position}}{% endif %}
+                            {% if pub.name %}{{pub.name}}{% endif %}{% if pub.publisher %}, {{pub.publisher}}{% endif %}
                         </span>
-                        {% if work.startDate %}
+                        {% if pub.releaseDate %}
                         <span class='date'>
-                            {% if work.startDate %}{{ work.startDate|simpledate }}{% endif %} &mdash; {% if work.endDate %}{{ work.endDate|simpledate }}{% else %}Present{% endif %}
+                            <span class='releaseDate'>{{pub.releaseDate}}</span>
                         </span>
                         {% endif %}
                     </div>
-                    <div><a href='{{work.website}}'>{{work.website}}</a></div>
-                    {% if work.highlights %}
+                    {% if pub.website %}
+                    <div class='website'>
+                        <a href='{{website}}'>{{ pub.website }}</a>
+                    </div>
+                    {% endif %}
+                    {% if pub.highlights %}
                     <ul class='highlights'>
-                        {% for highlight in work.highlights %}
-                        <li>{{ highlight }}</li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                    {% if work.details %}
-                    <ul class='details'>
-                        {% for detail in work.details %}
-                        <li>{% if detail.text %}{{detail.text}}{% endif %}{% if detail.comment %} <em>[{{detail.comment}}]</em>{% endif %}</li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                    {% if not loop.last %}<div class='separator'></div>{% endif %}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        {% endif %}
-        
-        {% if resume.publications %}
-        <div id='publications'>
-            <div class='sectionName'>
-                <span>PUBLICATIONS</span>
-            </div>
-            <div class='sectionContent'>
-                {% for pub in resume.publications %}
-                <div class='blockHeader'>
-                    <span class='title'>
-                        {% if pub.name %}{{pub.name}}{% endif %}{% if pub.publisher %}, {{pub.publisher}}{% endif %}
-                    </span>
-                    {% if pub.releaseDate %}
-                    <span class='date'>
-                        <span class='releaseDate'>{{pub.releaseDate}}</span>
-                    </span>
-                    {% endif %}
-                </div>
-                {% if pub.website %}
-                <div class='website'>
-                    <a href='{{website}}'>{{ pub.website }}</a>
-                </div>
-                {% endif %}
-                {% if pub.highlights %}
-                <ul class='highlights'>
-                    {% for h in pub.highlights %}
-                    <li>{{ h }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                {% if not loop.last %}<div class='separator'></div>{% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        {% endif %}
-        
-        {% if resume.awards %}
-        <div id='awards' class="sectionBlock">
-            <div class='sectionName'>
-                <span>AWARDS</span>
-            </div>
-            <div class='sectionContent'>
-                {% for award in resume.awards %}
-                <div class='blockHeader'>
-                    <span class='title'>
-                        {% if award.title %}{{award.title}}{% endif %}{% if award.awarder %}, {{award.awarder}}{% endif %}
-                    </span>
-                    {% if award.date %}
-                    <span class='date'>
-                        <span class='date'>{{award.date}}</span>
-                    </span>
-                    {% endif %}
-                </div>
-                {% if award.highlights %}
-                <ul class='highlights'>
-                    {% for h in award.highlights %}
-                    <li>{{ h }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                {% if not loop.last %}<div class='separator'></div>{% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        {% endif %}
-        
-        {% if resume.volunteer %}
-        <div id='volunteer' class="sectionBlock">
-            <div class='sectionName'>
-                <span>VOLUNTEERING</span>
-            </div>
-            <div class='sectionContent'>
-                {% for vol in resume.volunteer %}
-                <div class='blockHeader'>
-                    <span class='title'>{% if vol.organization %}{{vol.organization}}{% endif %}{% if vol.position %} - {{vol.position}}{% endif %}</span>
-                    {% if vol.startDate %}
-                    <span class='date'>
-                        {% if vol.startDate %}{{vol.startDate}}{% endif %} &mdash; {% if vol.endDate %}{{vol.endDate}}{% else %}Present{% endif %}
-                    </span>
-                    {% endif %}
-                    {% if vol.website %}
-                    <div class='website'><a href='{{website}}'>{{vol.website}}</a></div>
-                    {% endif %}
-                    {% if vol.highlights %}
-                    <ul class='highlights'>
-                        {% for h in vol.highlights %}
+                        {% for h in pub.highlights %}
                         <li>{{ h }}</li>
                         {% endfor %}
                     </ul>
                     {% endif %}
+                    {% if not loop.last %}<div class='separator'></div>{% endif %}
+                    {% endfor %}
                 </div>
-                {% if not loop.last %}<div class='separator'></div>{% endif %}
-                {% endfor %}
             </div>
-        </div>
-        <div class='sectionLine'></div>
-        {% endif %}
-        
-        {% if resume.education %}
-        <div id='education' class="sectionBlock">
-            <div class='sectionName'>
-                <span>EDUCATION</span>
-            </div>
-            <div class='sectionContent'>
-                {% for ed in resume.education %}
-                <div class='educationBlock'>
-                    <span class='title'>
-                        {% if ed.institution %}{{ed.institution}}{% endif %}
-                    </span>
-                    {% if ed.startDate %}
-                    <span class='date'>
-                        {% if ed.startDate %}{{ed.startDate|simpledate}}{% endif %} &mdash; {% if ed.endDate %}{{ed.endDate|simpledate}}{% else %}Present{% endif %}
-                    </span>
-                    {% endif %}
-                    {% if ed.studyType %}
-                    <div>
-                        {{ed.studyType}} - {% if ed.area %}{{ed.area}}{% endif %}{% if ed.gpa %}, GPA: {{ ed.gpa }}{% endif %}
+            <div class='sectionLine'></div>
+            {% endif %}
+
+            {% if resume.awards %}
+            <div id='awards' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>AWARDS</span>
+                </div>
+                <div class='sectionContent'>
+                    {% for award in resume.awards %}
+                    <div class='blockHeader'>
+                        <span class='title'>
+                            {% if award.title %}{{award.title}}{% endif %}{% if award.awarder %}, {{award.awarder}}{% endif %}
+                        </span>
+                        {% if award.date %}
+                        <span class='date'>
+                            <span class='date'>{{award.date}}</span>
+                        </span>
+                        {% endif %}
                     </div>
+                    {% if award.highlights %}
+                    <ul class='highlights'>
+                        {% for h in award.highlights %}
+                        <li>{{ h }}</li>
+                        {% endfor %}
+                    </ul>
                     {% endif %}
-                    {% if ed.courses %}
-                    <div id='coursesBlock'>
-                        {% for course in ed.courses %}
-                        <ul class='coursesList'>
-                            {% for c in course %}
-                            <li class='course'>{{ c }}</li>
+                    {% if not loop.last %}<div class='separator'></div>{% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class='sectionLine'></div>
+            {% endif %}
+
+            {% if resume.volunteer %}
+            <div id='volunteer' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>VOLUNTEERING</span>
+                </div>
+                <div class='sectionContent'>
+                    {% for vol in resume.volunteer %}
+                    <div class='blockHeader'>
+                        <span class='title'>{% if vol.organization %}{{vol.organization}}{% endif %}{% if vol.position %} - {{vol.position}}{% endif %}</span>
+                        {% if vol.startDate %}
+                        <span class='date'>
+                            {% if vol.startDate %}{{vol.startDate}}{% endif %} &mdash; {% if vol.endDate %}{{vol.endDate}}{% else %}Present{% endif %}
+                        </span>
+                        {% endif %}
+                        {% if vol.website %}
+                        <div class='website'><a href='{{website}}'>{{vol.website}}</a></div>
+                        {% endif %}
+                        {% if vol.highlights %}
+                        <ul class='highlights'>
+                            {% for h in vol.highlights %}
+                            <li>{{ h }}</li>
                             {% endfor %}
                         </ul>
-                        {% endfor %}
+                        {% endif %}
                     </div>
-                    {% endif %}
-                </div>
-                {% if not loop.last %}<div class='separator'></div>{% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        {% endif %}
-        
-        {% if resume.skills %}
-        <div id='skills' class="sectionBlock">
-            <div class='sectionName'>
-                <span>SKILLS</span>
-            </div>
-            <div class='sectionContent'>
-                {% for skill in resume.skills %}
-                <div class='skillBlock'>
-                    <span class='title'>{% if skill.name %}{{skill.name}}{% endif %}{% if skill.level %} <em>({{skill.level}})</em>{% endif %}:</span>
-                    {% if skill.keywords %}
-                    {% for kw in skill.keywords %}
-                    <span>{{ kw }}</span>{% if not loop.last %}, {% endif %}
+                    {% if not loop.last %}<div class='separator'></div>{% endif %}
                     {% endfor %}
-                    {% endif %}
-                    {% if skill.details %}
-                    {% for d in skill.details %}
-                    <span>{% if d.text %}{{d.text}}{% endif %}{% if d.comment %} <em>({{d.comment}})</em>{% endif %}{% if not loop.last %}, {% endif %}</span>
-                    {% endfor %}
-                    {% endif %}
                 </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class='sectionLine'></div>
-        {% endif %}
-        
-        {% if resume.languages %}
-        <div id='languages' class="sectionBlock">
-            <div class='sectionName'>
-                <span>LANGUAGES</span>
-            </div>
-            <div class='sectionContent'>
-                {% for lang in resume.languages %}
-                <span class='language'>{{ lang.language }}</span>
-                {% if lang.fluency %}
-                <span class='fluency'><em>({{ lang.fluency }})</em></span>
-                {% endif %}
-                {% if not loop.last %}<span>,</span>{% endif %}
-                {% endfor %}
             </div>
             <div class='sectionLine'></div>
-        </div>
-        {% endif %}
-        
-        {% if resume.interests %}
-        <div id='interests' class="sectionBlock">
-            <div class='sectionName'>
-                <span>INTERESTS</span>
-            </div>
-            <div class='sectionContent'>
-                {% for interest in resume.interests %}
-                <span class='name'>{{ interest.name }}</span>
-                <span class='keywords'> <em>[
-                {% for kw in interest.keywords %}
-                {{ kw }}
-                {% if not loop.last %}, {% endif %}
-                {% endfor %}
-                ]</em></span>
-                {% if not loop.last %}<span>, </span>{% endif %}
-                {% endfor %}
+            {% endif %}
+
+            {% if resume.education %}
+            <div id='education' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>EDUCATION</span>
+                </div>
+                <div class='sectionContent'>
+                    {% for ed in resume.education %}
+                    <div class='educationBlock'>
+                        <span class='title'>
+                            {% if ed.institution %}{{ed.institution}}{% endif %}
+                        </span>
+                        {% if ed.startDate %}
+                        <span class='date'>
+                            {% if ed.startDate %}{{ed.startDate|simpledate}}{% endif %} &mdash; {% if ed.endDate %}{{ed.endDate|simpledate}}{% else %}Present{% endif %}
+                        </span>
+                        {% endif %}
+                        {% if ed.studyType %}
+                        <div>
+                            {{ed.studyType}} - {% if ed.area %}{{ed.area}}{% endif %}{% if ed.gpa %}, GPA: {{ ed.gpa }}{% endif %}
+                        </div>
+                        {% endif %}
+                        {% if ed.courses %}
+                        <div id='coursesBlock'>
+                            {% for course in ed.courses %}
+                            <ul class='coursesList'>
+                                {% for c in course %}
+                                <li class='course'>{{ c }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% if not loop.last %}<div class='separator'></div>{% endif %}
+                    {% endfor %}
+                </div>
             </div>
             <div class='sectionLine'></div>
+            {% endif %}
+
+            {% if resume.skills %}
+            <div id='skills' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>SKILLS</span>
+                </div>
+                <div class='sectionContent'>
+                    {% for skill in resume.skills %}
+                    <div class='skillBlock'>
+                        <span class='title'>{% if skill.name %}{{skill.name}}{% endif %}{% if skill.level %} <em>({{skill.level}})</em>{% endif %}:</span>
+                        {% if skill.keywords %}
+                        {% for kw in skill.keywords %}
+                        <span>{{ kw }}</span>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        {% if skill.details %}
+                        {% for d in skill.details %}
+                        <span>{% if d.text %}{{d.text}}{% endif %}{% if d.comment %} <em>({{d.comment}})</em>{% endif %}{% if not loop.last %}, {% endif %}</span>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class='sectionLine'></div>
+            {% endif %}
+
+            {% if resume.languages %}
+            <div id='languages' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>LANGUAGES</span>
+                </div>
+                <div class='sectionContent'>
+                    {% for lang in resume.languages %}
+                    <span class='language'>{{ lang.language }}</span>
+                    {% if lang.fluency %}
+                    <span class='fluency'><em>({{ lang.fluency }})</em></span>
+                    {% endif %}
+                    {% if not loop.last %}<span>,</span>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class='sectionLine'></div>
+            </div>
+            {% endif %}
+
+            {% if resume.interests %}
+            <div id='interests' class="sectionBlock">
+                <div class='sectionName'>
+                    <span>INTERESTS</span>
+                </div>
+                <div class='sectionContent'>
+                    {% for interest in resume.interests %}
+                    <span class='name'>{{ interest.name }}</span>
+                    <span class='keywords'> <em>[
+                    {% for kw in interest.keywords %}
+                    {{ kw }}
+                    {% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                    ]</em></span>
+                    {% if not loop.last %}<span>, </span>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class='sectionLine'></div>
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
     </div>
 </body>
 </html>
